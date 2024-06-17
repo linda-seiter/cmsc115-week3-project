@@ -8,15 +8,16 @@
 
 In this project you will create methods to calculate the cost of painting a rectangular room.
 
-## Setup
+## Project files
 
-....
 
-Expand the `src` folder in the project explorer.  You'll see two classes `PaintCalculator.java` and `PaintCalculatorTest.java`.
+Expand `src` folder in the project explorer.  There are two classes `PaintCalculator.java` and `PaintCalculatorTest.java`.
 
-There are two ways to run the `main()` method in `PaintCalculator`:
- (1) Right-click/run as/java application`  ![right-click run as java application](images/runas_java.png)
- (2) Click the green run button. ![run button](images/run_button.png) 
+Recall the two ways to run the `main()` method:
+ 
+1. Right-click on `PaintCalculator.java`, then select `run as/java application`  ![right-click run as java application](images/runas_java.png)
+
+2. Open `PaintCalculator.java` in the editor, then click the green run button. ![run button](images/run_button.png) 
 
 ### Task #1
 
@@ -39,17 +40,19 @@ Run the program  to confirm the presence of an error.
 
 
 
-(1) Update `convertToFeet()` to correct the integer division error. The method should convert inches to feet as a double. 
-(2) Run `PaintCalculator` to confirm the correct output is produced.
+- Update `convertToFeet()` to correct the integer division error. The method should convert inches to feet as a double. 
+- Run `PaintCalculator` to confirm the correct output is produced.
+
 ```text
 2.5
 3.75
 1.0
 0.08333333333333333
 ```
-(3) Test the task by running the `PaintCalculatorTest` Junit class.   Confirm the test passes:
 
+- Test the task by running the `PaintCalculatorTest` Junit class.   Confirm the test passes:
 
+![task1 tests pass](images/task1_junit_test.png)
 
 
 
