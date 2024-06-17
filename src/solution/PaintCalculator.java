@@ -1,3 +1,4 @@
+package solution;
 import java.util.Scanner;
 
 /** 
@@ -21,7 +22,7 @@ public class PaintCalculator {
 	 * 
 	 * */
 	public static double convertToFeet(int feet, int inches) {
-		double inchesToFeet = inches/12;  //Integer division error!
+		double inchesToFeet = inches/12.0;
 		return feet + inchesToFeet;
 	}
 
@@ -36,11 +37,9 @@ public class PaintCalculator {
 	 * @param width - the room width 
 	 * @return the area of ceiling based on room length and width. 
 	 */
-	
-
-	
-	
-	
+	public static double calculateCeilingArea( double length, double width) {
+		return length * width;
+	}
 
 	/**
 	 * Task#3 - calculateWallArea
@@ -54,11 +53,9 @@ public class PaintCalculator {
 	 * @return the total area of wall space based on the
 	 *  room length, width, and height. 
 	 */
-	
-
-	
-	
-	
+	public static double calculateWallArea( double length, double width, double height) {
+		return 2 * (length + width) * height ;
+	}
 
 	/**
 	 * Task#4 - calculateRoomArea
@@ -72,11 +69,9 @@ public class PaintCalculator {
 	 * @return the combined ceiling and wall area based on the
 	 *  room length, width, and height. 
 	 */
-	
-
-	
-	
-	
+	public static double calculateRoomArea( double length, double width, double height) {
+		return calculateCeilingArea(length, width) + calculateWallArea(length, width, height);
+	}
 
 	/**
 	 * Task#5 - calculatePaintGallons
@@ -91,12 +86,11 @@ public class PaintCalculator {
 	 * @param height - the room height
 	 * @return the number of gallons of paint required to cover the walls and ceiling of the rectangular room. 
 	 */
-	
+	public static int calculatePaintGallons( double length, double width, double height) {
+		double sqFt = calculateRoomArea(length, width, height);
+		return (int)Math.ceil(sqFt / 350);
+	}
 
-	
-	
-	
-	
 	/**
 	 * Task#6 - calculatePaintCost
 	 * 
@@ -107,12 +101,39 @@ public class PaintCalculator {
 	 * @param height - the room height
 	 * @return the number of gallons of paint required to cover the walls and ceiling of the rectangular room. 
 	 */
-	
-
-	
-	
+	public static double calculatePaintCost( 
+			int lengthFt, int lengthInches, 
+			int widthFt, int widthInches, 
+			int heightFt, int heightInches,
+			double pricePerGallon) {
+		double length = convertToFeet(lengthFt, lengthInches);
+		double width = convertToFeet(widthFt, widthInches);
+		double height = convertToFeet(heightFt, heightInches);
+		double cost = calculatePaintGallons(length, width, height) * pricePerGallon;
+		return cost;
+	}
 	
 	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Room length in feet and inches:") ;
+		int lengthFt = input.nextInt();
+		int lengthInches = input.nextInt();
+		
+		System.out.println("Room width in feet and inches:") ;
+		int widthFt = input.nextInt();
+		int widthInches = input.nextInt();
+		
+		System.out.println("Room height in feet and inches:") ;
+		int heightFt = input.nextInt();
+		int heightInches = input.nextInt();
+		
+		System.out.println("Paint price per gallon:");
+		double pricePerGallon = input.nextDouble();
+		
+		double cost = calculatePaintCost(lengthFt, lengthInches, widthFt, widthInches, 
+				heightFt, heightInches, pricePerGallon);
+		System.out.println("Cost to paint the room is $" + cost);
 	
 	}
 
