@@ -11,17 +11,20 @@ In this project you will create methods to calculate the cost of painting a rect
 ## Project files
 
 
-Expand `src` folder in the project explorer.  There are two classes `PaintCalculator.java` and `PaintCalculatorTest.java`.
+Expand `src` folder in the project explorer.  There are two classes `PaintCalculator.java` and `PaintCalculatorTest.java`. 
 
+- `PaintCalculator` will contain the methods you'll write.
+- `PaintCalculatorTeset` will contain Junit tests to check the methods in `PaintCalculator`.
 
 
 ![project explorer view](images/project.png)
 
-Recall the two ways to run the `main()` method:
+Recall the two ways to run a `main()` method:
  
 1. Right-click on `PaintCalculator.java`, then select `run as/java application`  ![right-click run as java application](images/runas_java.png)
 
 2. Open `PaintCalculator.java` in the editor, then click the green run button. ![run button](images/run_button.png) 
+
 
 ### Task #1
 
