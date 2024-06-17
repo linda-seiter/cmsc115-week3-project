@@ -13,6 +13,10 @@ In this project you will create methods to calculate the cost of painting a rect
 
 Expand `src` folder in the project explorer.  There are two classes `PaintCalculator.java` and `PaintCalculatorTest.java`.
 
+
+
+![project explorer view](images/project.png)
+
 Recall the two ways to run the `main()` method:
  
 1. Right-click on `PaintCalculator.java`, then select `run as/java application`  ![right-click run as java application](images/runas_java.png)
@@ -22,8 +26,6 @@ Recall the two ways to run the `main()` method:
 ### Task #1
 
 
-
-![project explorer view](images/project.png)
 
 Double-click on `PaintCalculator.java` to view the code in the editor.
 The  `main()` method makes several calls to the `convertToFeet()` method. The `convertToFeet()` method should convert a quantity given in feet and inches to the equivalent amount of feet.  For example: 2 feet 6 inches should result in 2.5 feet.  There is an error in `convertToFeet()` that prevents the method from calculating the correct result due to integer division, i.e. `int/int ==> int`.  
